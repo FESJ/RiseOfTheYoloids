@@ -16,8 +16,7 @@ public class RiseOfTheYoloids extends JFrame implements KeyListener
 	public RiseOfTheYoloids() 
 	{		
 		super("Rise of the Yoloids");
-	/*	this.getInputMap().put(Keystroke.GetKeystroke("DOWN"), "down");
-	 	this.getActionmap().put("down", JOptionPane.showMessageDialog(null, "Tastencode:Kartoffel"); */
+	
 		this.addKeyListener(this);
 		
 		setSize(768, 480);	
