@@ -3,8 +3,7 @@
 package roty;
 
 import java.awt.event.*;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 public class RiseOfTheYoloids extends JFrame implements KeyListener 
 {
@@ -15,7 +14,7 @@ public class RiseOfTheYoloids extends JFrame implements KeyListener
 	public RiseOfTheYoloids() 
 	{		
 		super("Rise of the Yoloids");
-		
+				
 		this.addKeyListener(this);
 		
 		setSize(768, 480);
