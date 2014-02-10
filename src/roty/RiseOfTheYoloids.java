@@ -5,6 +5,8 @@ package roty;
 import java.awt.event.*;
 import javax.swing.*;
 
+import roty.characters.*;
+
 public class RiseOfTheYoloids extends JFrame implements KeyListener 
 {
 
@@ -17,9 +19,8 @@ public class RiseOfTheYoloids extends JFrame implements KeyListener
 				
 		this.addKeyListener(this);
 		
-		setSize(768, 480);
-		setVisible(true);
-	
+		setSize(768, 480);	
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 		
 	public void keyTyped(KeyEvent e) {}
@@ -33,7 +34,11 @@ public class RiseOfTheYoloids extends JFrame implements KeyListener
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		new RiseOfTheYoloids();
+		RiseOfTheYoloids game = new RiseOfTheYoloids();
+		PlayerCharacter jim = new PlayerCharacter();
+		game.add(jim);
+		game.setVisible(true);
+		
 	}
 }
 
