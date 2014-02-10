@@ -9,6 +9,8 @@ import javax.swing.JOptionPane;
 public class RiseOfTheYoloids extends JFrame implements KeyListener 
 {
 
+	private static final long serialVersionUID = -1346330874443146866L;
+	
 	// Constructor
 	public RiseOfTheYoloids() 
 	{		
