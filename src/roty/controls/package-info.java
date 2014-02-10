@@ -2,4 +2,4 @@
  * @author Dennis Deidert, Felix Sjöö
  *
  */
-package roty.characters;
+package roty.controls;
