@@ -24,15 +24,16 @@ public class RiseOfTheYoloids extends JFrame implements KeyListener
 	}
 		
 	public void keyTyped(KeyEvent e) {}
-	public void keyPressed(KeyEvent e) {
+	
+	public void keyPressed(KeyEvent e) 
+	{
 		JOptionPane.showMessageDialog(null, "Tastencode: "+e.getKeyCode());
 	}
+	
 	public void keyReleased(KeyEvent e) {}
-	/**
-	 * vfvfdv
-	 * @param args
-	 */
-	public static void main(String[] args) {
+
+	public static void main(String[] args) 
+	{
 		// TODO Auto-generated method stub
 		RiseOfTheYoloids game = new RiseOfTheYoloids();
 		PlayerCharacter jim = new PlayerCharacter();
