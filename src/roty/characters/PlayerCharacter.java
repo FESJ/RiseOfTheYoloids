@@ -32,7 +32,6 @@ public class PlayerCharacter extends JPanel implements ActionListener
 	public void actionPerformed(ActionEvent e) 
 	{
 	}
-	public 
 	
 	public void paintComponent(Graphics g) 
 	{
