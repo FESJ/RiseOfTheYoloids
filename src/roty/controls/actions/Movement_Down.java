@@ -6,28 +6,35 @@ import javax.swing.JOptionPane;
 
 import roty.world.random.*;
 
+import roty.characters.*;
+
 public class Movement_Down extends AbstractAction
 {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -5767939625926727319L;
+	private PlayerCharacter container;
+	
 	/**
 	 * 
 	 */
 
-	public Movement_Down()
+	public Movement_Down(PlayerCharacter x)
 	{
-
+		container = x;
+		
 	}
 
 
 	public void actionPerformed(ActionEvent e) 
 	{
+		JOptionPane.showMessageDialog(null, "Tastencode:Kartoffel");
+		container.changeYPosition(1, -50);
+
 		RandomNeighbor karl = new RandomNeighbor();
 		RandomRule steve = new RandomRule();
 		
 		JOptionPane.showMessageDialog(null, "Id: "+karl.getNeighborByRule(steve));
-
-	}
+}
 }
