@@ -5,6 +5,8 @@ import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 import javax.swing.JOptionPane;
 
+import roty.characters.*;
+
 public class Movement_Left extends AbstractAction
 {
 	/**
@@ -14,10 +16,12 @@ public class Movement_Left extends AbstractAction
 	/**
 	 * 
 	 */
+	private PlayerCharacter container;
 
-	public Movement_Left()
+
+	public Movement_Left(PlayerCharacter x)
 	{
-
+		
 	}
 
 

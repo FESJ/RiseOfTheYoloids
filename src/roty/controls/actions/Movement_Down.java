@@ -29,10 +29,5 @@ public class Movement_Down extends AbstractAction
 	public void actionPerformed(ActionEvent e) 
 	{
 		container.changeYPosition(-50);
-
-		RandomNeighbor karl = new RandomNeighbor();
-		RandomRule steve = new RandomRule();
-		
-		JOptionPane.showMessageDialog(null, "Id: "+karl.getNeighborByRule(steve));
-}
+	}
 }

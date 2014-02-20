@@ -11,10 +11,11 @@ public class PlayerCharacter extends JPanel implements ActionListener
 
 	private static final long serialVersionUID = -7499253372209406900L;
 	private int[] position = {100, 100};
+	private int[] size = {50, 50};
 	private Movement_Down down = new Movement_Down(this);
-	private Movement_Left left = new Movement_Left();
-	private Movement_Right right = new Movement_Right();
-	private Movement_Up up = new Movement_Up();
+	private Movement_Left left = new Movement_Left(this);
+	private Movement_Right right = new Movement_Right(this);
+	private Movement_Up up = new Movement_Up(this);
 	
 	public PlayerCharacter()
 	{
@@ -37,12 +38,16 @@ public class PlayerCharacter extends JPanel implements ActionListener
 	{
 		   super.paintComponent(g);
 		   // Assume x, y, and diameter are instance variables.
-		   g.drawOval(getPosition()[0], getPosition()[1], 50, 50);
+		   g.drawOval(getPosition()[0], getPosition()[1], getSize()[0], getSize()[1]);
     }
 
 	public int[] getPosition() 
 	{
 		return position;
+	}
+	public int[] getSize()
+	{
+		return size;
 	}
 
 	public void changeYPosition(int value)
