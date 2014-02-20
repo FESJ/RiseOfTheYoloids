@@ -3,7 +3,6 @@ package roty.controls.actions;
 import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
-import javax.swing.JOptionPane;
 
 import roty.characters.*;
 
@@ -17,17 +16,17 @@ public class Movement_Up extends AbstractAction
 	 * 
 	 */
 	private PlayerCharacter container;
-
+	private int movement;
 
 	public Movement_Up(PlayerCharacter x)
 	{
-
+		container = x;
+		movement = container.getDim()[0];
 	}
 
 
 	public void actionPerformed(ActionEvent e) 
 	{
-		JOptionPane.showMessageDialog(null, "Tastencode:OBEN");
-
+		container.changeYPosition(movement);
 	}
 }

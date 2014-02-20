@@ -3,7 +3,6 @@ package roty.controls.actions;
 import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
-import javax.swing.JOptionPane;
 
 import roty.characters.*;
 
@@ -17,16 +16,17 @@ public class Movement_Right extends AbstractAction
 	 * 
 	 */
 	private PlayerCharacter container;
-
+	private int movement;
+	
 	public Movement_Right(PlayerCharacter x)
 	{
-
+		container = x;
+		movement = container.getDim()[1];
 	}
 
 
 	public void actionPerformed(ActionEvent e) 
 	{
-		JOptionPane.showMessageDialog(null, "Tastencode:RECHTS");
-
+		container.changeXPosition(-movement);
 	}
 }

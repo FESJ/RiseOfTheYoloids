@@ -38,14 +38,14 @@ public class PlayerCharacter extends JPanel implements ActionListener
 	{
 		   super.paintComponent(g);
 		   // Assume x, y, and diameter are instance variables.
-		   g.drawOval(getPosition()[0], getPosition()[1], getSize()[0], getSize()[1]);
+		   g.drawOval(getPosition()[0], getPosition()[1], getDim()[0], getDim()[1]);
     }
 
 	public int[] getPosition() 
 	{
 		return position;
 	}
-	public int[] getSize()
+	public int[] getDim()
 	{
 		return size;
 	}
