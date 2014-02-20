@@ -12,9 +12,9 @@ public class RotyTools
 		&& pos.y >= 0 
 		&& pos.x + dim.width <= boundaries.width 
 		&& pos.y + dim.height <= boundaries.height)
-						return true;
+						return false;
 		
-		return false;
+		return true;
 	}
 	
 }
