@@ -45,14 +45,14 @@ public class PlayerCharacter extends JPanel implements ActionListener
 		return position;
 	}
 
-	public void changeYPosition(int y, int value)
+	public void changeYPosition(int value)
 	{
-		this.position[y] = this.position[y] - value;
+		this.position[1] = this.position[1] - value;
 		repaint();
 	}
-	public void changeXPosition(int x, int value)
+	public void changeXPosition(int value)
 	{
-		this.position[x] = this.position[x] - value;
+		this.position[0] = this.position[0] - value;
 		repaint();
 	}
 }

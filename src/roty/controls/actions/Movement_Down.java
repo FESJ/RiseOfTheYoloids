@@ -5,7 +5,6 @@ import javax.swing.AbstractAction;
 import javax.swing.JOptionPane;
 
 import roty.world.random.*;
-
 import roty.characters.*;
 
 public class Movement_Down extends AbstractAction
@@ -29,8 +28,7 @@ public class Movement_Down extends AbstractAction
 
 	public void actionPerformed(ActionEvent e) 
 	{
-		JOptionPane.showMessageDialog(null, "Tastencode:Kartoffel");
-		container.changeYPosition(1, -50);
+		container.changeYPosition(-50);
 
 		RandomNeighbor karl = new RandomNeighbor();
 		RandomRule steve = new RandomRule();
