@@ -22,12 +22,12 @@ public class Movement_Left extends AbstractAction
 	public Movement_Left(PlayerCharacter x)
 	{
 		container = x;
-		movement = container.getDim()[1];
+		movement = container.getDim().width;
 	}
 
 
 	public void actionPerformed(ActionEvent e) 
 	{
-		container.changeXPosition(movement);
+		container.changeXPosition(-movement);
 	}
 }

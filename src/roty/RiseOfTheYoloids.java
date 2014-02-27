@@ -3,8 +3,11 @@
 package roty;
 
 import javax.swing.*;
-
+import java.awt.*;
 import roty.characters.*;
+import roty.world.*;
+
+import roty.world.misc.RotyTools;
 
 public class RiseOfTheYoloids extends JFrame
 {
@@ -15,9 +18,11 @@ public class RiseOfTheYoloids extends JFrame
 	public RiseOfTheYoloids() 
 	{		
 		super("Rise of the Yoloids");
-		
-		setSize(768, 480);	
+		RotyTools.setWorldSize(new Dimension(768, 480));
+		setSize(RotyTools.getWorldSize().width, RotyTools.getWorldSize().height);	
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setBackground(Color.red);
+		this.setForeground(Color.blue);
 	}
 		
 

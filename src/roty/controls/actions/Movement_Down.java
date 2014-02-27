@@ -20,12 +20,12 @@ public class Movement_Down extends AbstractAction
 	public Movement_Down(PlayerCharacter x)
 	{
 		container = x;
-		movement = container.getDim()[0];
+		movement = container.getDim().height;
 	}
 
 
 	public void actionPerformed(ActionEvent e) 
 	{
-		container.changeYPosition(-movement);
+		container.changeYPosition(movement);
 	}
 }
