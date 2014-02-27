@@ -58,7 +58,10 @@ public class Database {
 			// Setup the connection with the DB
 			dbconn = DriverManager.getConnection("jdbc:" + db + "?user=" + user + "&password=" + pass);
 		}
-		catch (Exception e){}
+		catch (Exception e)
+		{
+			throw e;
+		}
 	}
 	
 	
@@ -93,7 +96,9 @@ public class Database {
 			result = statement.executeQuery(_statement);
 		} 
 		catch (Exception e) 
-		{}
+		{
+			throw e;
+		}
 	}
 	
 	public ResultSet getResult() throws Exception
@@ -101,7 +106,9 @@ public class Database {
 		try 
 		{}
 		catch (Exception e) 
-		{}	
+		{
+			throw e;
+		}	
 		
 		return result;
 	}
