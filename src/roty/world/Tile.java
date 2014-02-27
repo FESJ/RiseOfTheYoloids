@@ -1,5 +1,5 @@
 package roty.world;
-import java.awt.*;
+//import java.awt.*;
 import roty.world.random.*;
 
 public class Tile 

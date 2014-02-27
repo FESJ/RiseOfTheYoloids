@@ -5,7 +5,7 @@ package roty;
 import javax.swing.*;
 import java.awt.*;
 import roty.characters.*;
-import roty.world.*;
+//import roty.world.*;
 
 import roty.world.misc.RotyTools;
 
