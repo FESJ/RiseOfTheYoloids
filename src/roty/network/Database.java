@@ -26,12 +26,12 @@ public class Database {
 		}
 	}
 	
-	public Database(String db, String user, String pass) throws Exception
+	public Database(String server, String db, String user, String pass) throws Exception
 	{
 		try
 		{
 			Class.forName("com.mysql.jdbc.Driver");
-			connect(db, user, pass);
+			connect(server, db, user, pass);
 		}
 		catch (Exception e) 
 		{
@@ -51,12 +51,14 @@ public class Database {
 	}
 */	
 	
-	public void connect(String db, String user, String pass) throws Exception
+	public void connect(String server, String db, String user, String pass) throws Exception
 	{
 		try
 		{
+			//System.out.println("jdbc:mysql://" + server + "/" + db + "?user=" + user + "&password=" + pass);
+			
 			// Setup the connection with the DB
-			dbconn = DriverManager.getConnection("jdbc:" + db + "?user=" + user + "&password=" + pass);
+			dbconn = DriverManager.getConnection("jdbc:mysql://" + server + "/" + db + "?user=" + user + "&password=" + pass);
 		}
 		catch (Exception e)
 		{
