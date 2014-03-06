@@ -11,7 +11,7 @@ public class PlayerCharacter extends JLabel implements ActionListener
 {
 
 	private static final long serialVersionUID = -7499253372209406900L;
-	private Point position = new Point(100, 100);
+	private Point position = new Point(0, 0);
 	private Dimension size = new Dimension(20, 20);
 	private Movement_Down down = new Movement_Down(this);
 	private Movement_Left left = new Movement_Left(this);
@@ -61,7 +61,7 @@ public class PlayerCharacter extends JLabel implements ActionListener
 		if(RotyTools.isOutOfBounds(new Point(position.x,position.y+value), size) == false)
 			position.y = position.y + value;
 		else if (position.y <= 0)
-			position.y = RotyTools.getWorldSize().height+(value*2);
+			position.y = RotyTools.getWorldSize().height+(value);
 		else
 			position.y = 0;
 		
@@ -73,7 +73,7 @@ public class PlayerCharacter extends JLabel implements ActionListener
 		if(RotyTools.isOutOfBounds(new Point(position.x+value,position.y), size) == false)
 			position.x = position.x + value;
 		else if (position.x <= 0)
-			position.x = RotyTools.getWorldSize().width+(value*2);
+			position.x = RotyTools.getWorldSize().width+(value);
 		else
 			position.x = 0;
 			

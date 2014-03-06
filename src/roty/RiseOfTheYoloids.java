@@ -23,14 +23,17 @@ public class RiseOfTheYoloids extends JFrame
 	{		
 		super("Rise of the Yoloids");
 		RotyTools.setWorldSize(new Dimension(768, 480));
-		setSize(RotyTools.getWorldSize().width, RotyTools.getWorldSize().height);	
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.getContentPane().setPreferredSize(RotyTools.getWorldSize());
+		//this.setSize(RotyTools.getWorldSize());
+		//this.setPreferredSize(RotyTools.getWorldSize());
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		canvas = new JLayeredPane();
+		canvas.setSize(RotyTools.getWorldSize());
 		
 		World world = new World();
 		world.setColor(Color.RED);
-		world.setSize(768, 480);
+		world.setSize(RotyTools.getWorldSize());
 		
 		PlayerCharacter jim = new PlayerCharacter();
 		
@@ -39,8 +42,8 @@ public class RiseOfTheYoloids extends JFrame
 		canvas.add(jim);
 		canvas.moveToFront(jim);
 		
-		
-		
+		this.setVisible(true);
+		this.pack();
 	}
 	
 	//public void startGame(){}		
@@ -48,9 +51,7 @@ public class RiseOfTheYoloids extends JFrame
 	public static void main(String[] args) 
 	{
 		// TODO Auto-generated method stub
-		RiseOfTheYoloids game = new RiseOfTheYoloids();
-		
-		game.setVisible(true);		
+		new RiseOfTheYoloids();			
 	}
 }
 
