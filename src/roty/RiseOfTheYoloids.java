@@ -24,7 +24,7 @@ public class RiseOfTheYoloids extends JFrame
 		RotyTools.setWorldSize(new Dimension(768, 480));
 		setSize(RotyTools.getWorldSize().width, RotyTools.getWorldSize().height);	
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		world.SetColor(Color.RED);
+		world.setColor(Color.RED);
 		world.setSize(768, 480);
 		this.add(world);
 	}

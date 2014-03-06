@@ -2,9 +2,10 @@ package roty.world;
 
 import java.awt.Color;
 
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class World extends JPanel 
+public class World extends JLabel
 {
 
 	/**
@@ -14,7 +15,7 @@ public class World extends JPanel
 
 	public World ()
 	{}
-	public void SetColor (Color x)
+	public void setColor (Color x)
 	{
 		this.setBackground(x);
 	}
