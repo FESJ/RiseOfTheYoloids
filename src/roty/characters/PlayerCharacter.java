@@ -7,7 +7,7 @@ import java.awt.*;
 import javax.swing.*;
 import roty.world.misc.*;
 
-public class PlayerCharacter extends JPanel implements ActionListener
+public class PlayerCharacter extends JLabel implements ActionListener
 {
 
 	private static final long serialVersionUID = -7499253372209406900L;
@@ -20,6 +20,11 @@ public class PlayerCharacter extends JPanel implements ActionListener
 	
 	public PlayerCharacter()
 	{
+		this.setSize(20, 20);
+		this.setOpaque(true);
+		this.setBackground(Color.BLACK);
+		this.setLocation(position);
+		
 		//Mapping movement actions to corresponding keys. 
 		this.getInputMap().put(KeyStroke.getKeyStroke("DOWN"), "down");
 	 	this.getActionMap().put("down", down);
@@ -39,7 +44,7 @@ public class PlayerCharacter extends JPanel implements ActionListener
 	{
 		   super.paintComponent(g);
 		   // Assume x, y, and diameter are instance variables.
-		   g.drawOval(position.x, position.y, size.width, size.height);
+		   //g.drawOval(position.x, position.y, size.width, size.height);
     }
 
 	public Point getPosition() 
@@ -59,7 +64,8 @@ public class PlayerCharacter extends JPanel implements ActionListener
 			position.y = RotyTools.getWorldSize().height+(value*2);
 		else
 			position.y = 0;
-			
+		
+		this.setLocation(position);
 		repaint();
 	}
 	public void changeXPosition(int value)
@@ -71,6 +77,7 @@ public class PlayerCharacter extends JPanel implements ActionListener
 		else
 			position.x = 0;
 			
+		this.setLocation(position);
 		repaint();
 	}
 }
