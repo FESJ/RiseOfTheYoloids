@@ -64,6 +64,10 @@ public class Database {
 		{
 			throw e;
 		}
+		finally 
+		{
+			close();
+		}
 	}
 	
 	

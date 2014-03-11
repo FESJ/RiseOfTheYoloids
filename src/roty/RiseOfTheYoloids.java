@@ -8,40 +8,61 @@ import java.awt.*;
 import roty.characters.*;
 import roty.world.World;
 import roty.world.misc.RotyTools;
-//import roty.network.*;
+import roty.network.*;
 
 public class RiseOfTheYoloids extends JFrame
 {
 
 	private static final long serialVersionUID = -1346330874443146866L;
 	
+	private String 	dbserver	= "remote-mysql3.servage.net", 
+					dbname		= "felixvansjoe", 
+					dbuser		= "felixvansjoe", 
+					dbpass		= "xchat2013";
+	
 	private JLayeredPane canvas;
 	
 	
 	// Constructor
 	public RiseOfTheYoloids() 
-	{		
+	{	
+		// Setting Name
 		super("Rise of the Yoloids");
+		
+		// Connect to DB
+		try
+		{ 
+			Database db = new Database(dbserver, dbname, dbuser, dbpass);
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+		// Setting Size
 		RotyTools.setWorldSize(new Dimension(768, 480));
 		this.getContentPane().setPreferredSize(RotyTools.getWorldSize());
-		//this.setSize(RotyTools.getWorldSize());
-		//this.setPreferredSize(RotyTools.getWorldSize());
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
+		// Creating Canvas
 		canvas = new JLayeredPane();
 		canvas.setSize(RotyTools.getWorldSize());
 		
+		// Creating World
 		World world = new World();
 		world.setColor(Color.RED);
 		world.setSize(RotyTools.getWorldSize());
 		
+		// Creating Player
 		PlayerCharacter jim = new PlayerCharacter();
 		
+		// Adding all to the Canvas
 		this.add(canvas);
 		canvas.add(world);
 		canvas.add(jim);
 		canvas.moveToFront(jim);
 		
+		// And show it!
 		this.setVisible(true);
 		this.pack();
 	}
@@ -49,7 +70,7 @@ public class RiseOfTheYoloids extends JFrame
 	//public void startGame(){}		
 
 	public static void main(String[] args) 
-	{
+	{		
 		// TODO Auto-generated method stub
 		new RiseOfTheYoloids();			
 	}
