@@ -1,10 +1,29 @@
 package roty.world;
-//import java.awt.*;
+import java.awt.Dimension;
+
+import roty.world.misc.RotyTools;
+import javax.swing.*;
 import roty.world.random.*;
 
-public class Tile 
+public class Tile extends JPanel
 {
-	private static int fieldsize = 24;
+	private static final long serialVersionUID = -2857954614992719831L;
+
+	private Dimension raster;
+	private Field[][] fields;
+	
+	public Tile()
+	{
+		raster.width = RotyTools.getWorldSize().width / RotyTools.getFieldSize().width;
+		raster.height = RotyTools.getWorldSize().height / RotyTools.getFieldSize().height;
+		fields = new Field[raster.width][raster.height];
+		
+	}
+	
+/*	private int fieldsize = 24;
+	private int 	dimx = RotyTools.getWorldSize().width/fieldsize,
+					dimy = RotyTools.getWorldSize().height/fieldsize;
+	
 	
 	private String[] farbtest;
 	private double[] percents;
@@ -23,4 +42,5 @@ public class Tile
 		counter = RandomNeighbor.getNeighborByRule(randoms);
 		return farbtest[counter];
 	}
+*/
 }

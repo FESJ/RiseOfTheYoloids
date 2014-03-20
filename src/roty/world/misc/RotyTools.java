@@ -5,12 +5,23 @@ import java.awt.*;
 public class RotyTools 
 {
 	private static Dimension worldsize;
+	private static Dimension fieldsize;
 	
 	public RotyTools(){}
+	
+	public static void setFieldSize(Dimension _fieldsize)
+	{
+		fieldsize = _fieldsize;
+	}
 	
 	public static void setWorldSize(Dimension _worldsize)
 	{
 		worldsize = _worldsize;
+	}
+	
+	public static Dimension getFieldSize()
+	{
+		return fieldsize;
 	}
 	
 	public static Dimension getWorldSize()
