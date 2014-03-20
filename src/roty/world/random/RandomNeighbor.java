@@ -6,7 +6,7 @@ public class RandomNeighbor {
 
 	public RandomNeighbor(){}
 	
-	public int getNeighborByRule(RandomRule rule)
+	public static int getNeighborByRule(RandomRule rule)
 	{
 		double roll = Math.random();
 		

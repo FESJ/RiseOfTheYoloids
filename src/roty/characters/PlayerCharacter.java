@@ -43,16 +43,27 @@ public class PlayerCharacter extends JLabel implements ActionListener
 	}
 	private ImageIcon returnIcon(String direction)
 	{
-		java.net.URL imgURL = PlayerCharacter.class.getResource("images/guys_01_"+direction+".png");
-        if (imgURL != null)
-        {
-            return new ImageIcon(imgURL);
-        } 
-        else 
-        {
-            return null;
-        }
+		try
+		{
+			java.net.URL imgURL = PlayerCharacter.class.getResource("images/guys_01_"+direction+".png");
+			
+			if (imgURL != null)
+	        {
+	            return new ImageIcon(imgURL);
+	        } 
+	        else 
+	        {
+	            return null;
+	        }
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+		return null;		
     }
+	
 	public void actionPerformed(ActionEvent e) 
 	{
 	}
