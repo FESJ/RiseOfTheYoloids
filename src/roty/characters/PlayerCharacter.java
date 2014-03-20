@@ -46,7 +46,6 @@ public class PlayerCharacter extends JLabel implements ActionListener
 		try
 		{
 			java.net.URL imgURL = PlayerCharacter.class.getResource("../images/guy_01_"+direction+".png");
-			System.out.println(imgURL.getPath());
 			
 			if (imgURL != null)
 	        {
