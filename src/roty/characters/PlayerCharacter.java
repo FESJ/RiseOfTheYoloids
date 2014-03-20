@@ -17,14 +17,20 @@ public class PlayerCharacter extends JLabel implements ActionListener
 	private Movement_Left left = new Movement_Left(this);
 	private Movement_Right right = new Movement_Right(this);
 	private Movement_Up up = new Movement_Up(this);
-	
+	private ImageIcon icon = returnIcon("down");
 	public PlayerCharacter()
 	{
 		this.setSize(20, 20);
-		this.setOpaque(true);
-		this.setBackground(Color.BLACK);
-		this.setLocation(position);
-		
+		if (icon == null)
+		{
+			this.setOpaque(true);
+			this.setBackground(Color.BLACK);
+			this.setLocation(position);
+		}
+		else
+		{
+		this.setIcon(icon);
+		}
 		//Mapping movement actions to corresponding keys. 
 		this.getInputMap().put(KeyStroke.getKeyStroke("DOWN"), "down");
 	 	this.getActionMap().put("down", down);
@@ -35,7 +41,18 @@ public class PlayerCharacter extends JLabel implements ActionListener
 		this.getInputMap().put(KeyStroke.getKeyStroke("UP"), "up");
 	 	this.getActionMap().put("up", up);
 	}
-
+	private ImageIcon returnIcon(String direction)
+	{
+		java.net.URL imgURL = PlayerCharacter.class.getResource("images/guys_01_"+direction+".png");
+        if (imgURL != null)
+        {
+            return new ImageIcon(imgURL);
+        } 
+        else 
+        {
+            return null;
+        }
+    }
 	public void actionPerformed(ActionEvent e) 
 	{
 	}
