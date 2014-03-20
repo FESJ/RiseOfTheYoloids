@@ -33,6 +33,7 @@ public class RiseOfTheYoloids extends JFrame
 		try
 		{ 
 			Database db = new Database(dbserver, dbname, dbuser, dbpass);
+			db.close();
 		}
 		catch (Exception e)
 		{
