@@ -28,6 +28,6 @@ public class Movement_Left extends AbstractAction
 
 	public void actionPerformed(ActionEvent e) 
 	{
-		container.changeXPosition(-movement);
+		container.changeXPosition(-movement, "left");
 	}
 }

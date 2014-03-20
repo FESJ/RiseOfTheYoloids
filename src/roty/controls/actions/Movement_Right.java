@@ -27,6 +27,6 @@ public class Movement_Right extends AbstractAction
 
 	public void actionPerformed(ActionEvent e) 
 	{
-		container.changeXPosition(movement);
+		container.changeXPosition(movement, "right");
 	}
 }

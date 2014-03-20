@@ -26,6 +26,6 @@ public class Movement_Down extends AbstractAction
 
 	public void actionPerformed(ActionEvent e) 
 	{
-		container.changeYPosition(movement);
+		container.changeYPosition(movement, "down");
 	}
 }

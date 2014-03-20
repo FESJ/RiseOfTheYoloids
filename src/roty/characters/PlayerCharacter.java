@@ -63,7 +63,10 @@ public class PlayerCharacter extends JLabel implements ActionListener
 		
 		return null;		
     }
-	
+	private void resetIcon(String cont)
+	{
+		this.setIcon(returnIcon(cont));
+	}
 	public void actionPerformed(ActionEvent e) 
 	{
 	}
@@ -84,8 +87,9 @@ public class PlayerCharacter extends JLabel implements ActionListener
 		return size;
 	}
 
-	public void changeYPosition(int value)
+	public void changeYPosition(int value, String direction)
 	{
+		resetIcon(direction);
 		if(RotyTools.isOutOfBounds(new Point(position.x,position.y+value), size) == false)
 			position.y = position.y + value;
 		else if (position.y <= 0)
@@ -96,8 +100,9 @@ public class PlayerCharacter extends JLabel implements ActionListener
 		this.setLocation(position);
 		repaint();
 	}
-	public void changeXPosition(int value)
+	public void changeXPosition(int value, String direction)
 	{
+		resetIcon(direction);
 		if(RotyTools.isOutOfBounds(new Point(position.x+value,position.y), size) == false)
 			position.x = position.x + value;
 		else if (position.x <= 0)
