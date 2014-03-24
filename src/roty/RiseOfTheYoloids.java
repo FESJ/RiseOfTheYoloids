@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 
 import roty.characters.*;
-import roty.world.World;
+import roty.world.*;
 import roty.world.misc.RotyTools;
 import roty.network.*;
 
@@ -55,12 +55,15 @@ public class RiseOfTheYoloids extends JFrame
 		world.setColor(Color.RED);
 		world.setSize(RotyTools.getWorldSize());
 		
+		//Tile tile = new Tile();
+		
 		// Creating Player
 		PlayerCharacter jim = new PlayerCharacter();
 		
 		// Adding all to the Canvas
 		this.add(canvas);
 		canvas.add(world);
+		//world.add(tile);
 		canvas.add(jim);
 		canvas.moveToFront(jim);
 		
