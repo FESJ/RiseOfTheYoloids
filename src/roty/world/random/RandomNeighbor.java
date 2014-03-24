@@ -2,25 +2,28 @@ package roty.world.random;
 
 import java.lang.Math;
 
-public class RandomNeighbor {
-
-	public RandomNeighbor(){}
+// Class for Functions regarding randomizing the world
+public final class RandomNeighbor {
 	
-	public static int getNeighborByRule(RandomRule rule)
+	
+	// Get the ID of a tile/field by a given rule
+	public static int getByRule(RandomRule rule)
 	{
+		// Roll between 0 and 1
 		double roll = Math.random();
 		
+		// Subtracting down to find resulting field/tile
 		for(int i=0; i<rule.getSize(); i++)
 		{
 			roll -= rule.getOddsByPos(i);
 			
 			if(roll < 0.0)
 			{
-				return i;
+				return rule.getOutcomeByPos(i);
 			}
 		}
-		
-		
-		return -1;
-	}	
+			
+		// If no field/tile found, return default
+		return 0;
+	}
 }

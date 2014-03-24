@@ -8,9 +8,6 @@ import javax.swing.JLabel;
 public class World extends JLabel
 {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 4940479926239960801L;
 
 	public World ()

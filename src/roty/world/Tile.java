@@ -3,7 +3,7 @@ import java.awt.Dimension;
 
 import roty.world.misc.RotyTools;
 import javax.swing.*;
-import roty.world.random.*;
+//import roty.world.random.*;
 
 public class Tile extends JPanel
 {
@@ -17,6 +17,14 @@ public class Tile extends JPanel
 		raster.width = RotyTools.getWorldSize().width / RotyTools.getFieldSize().width;
 		raster.height = RotyTools.getWorldSize().height / RotyTools.getFieldSize().height;
 		fields = new Field[raster.width][raster.height];
+		
+		for(int i = 0; i < raster.height; i++)
+		{
+			for(int j = 0; j < raster.width; j++)
+			{
+				this.add(fields[j][i]);
+			}
+		}
 		
 	}
 	
