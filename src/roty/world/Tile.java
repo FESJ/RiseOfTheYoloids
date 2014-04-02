@@ -22,6 +22,8 @@ public class Tile extends JPanel
 		{
 			for(int j = 0; j < raster.width; j++)
 			{
+				//this ? es sollte das teil returnen und main sollte adden, meine ich
+			
 				this.add(fields[j][i]);
 			}
 		}
