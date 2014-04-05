@@ -144,4 +144,14 @@ public class RandomRule
 		return 0;
 	}
 	
+	
+	// Static method for combining 2 rules
+	public static RandomRule combineRules(RandomRule a, RandomRule b)
+	{
+		
+		RandomRule result = new RandomRule();
+		
+		return result;
+	}
+	
 }

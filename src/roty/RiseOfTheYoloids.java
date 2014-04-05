@@ -63,8 +63,9 @@ public class RiseOfTheYoloids extends JFrame
 		// Adding all to the Canvas
 		this.add(canvas);
 		canvas.add(world);
-		//world.add(tile);
+		//canvas.add(tile);
 		canvas.add(jim);
+		//canvas.moveToFront(tile);
 		canvas.moveToFront(jim);
 		
 		// And show it!

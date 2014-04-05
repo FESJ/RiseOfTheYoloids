@@ -1,4 +1,5 @@
 package roty.world;
+import java.awt.Color;
 import java.awt.Dimension;
 
 import roty.world.misc.RotyTools;
@@ -14,6 +15,7 @@ public class Tile extends JPanel
 	
 	public Tile()
 	{
+		raster  = new Dimension();
 		raster.width = RotyTools.getWorldSize().width / RotyTools.getFieldSize().width;
 		raster.height = RotyTools.getWorldSize().height / RotyTools.getFieldSize().height;
 		fields = new Field[raster.width][raster.height];
@@ -24,6 +26,9 @@ public class Tile extends JPanel
 			{
 				//this ? es sollte das teil returnen und main sollte adden, meine ich
 			
+				fields[j][i] = new Field();
+				fields[j][i].setBackground(Color.GREEN);
+				fields[j][i].setSize(RotyTools.getFieldSize());
 				this.add(fields[j][i]);
 			}
 		}
