@@ -15,6 +15,9 @@ public class Tile extends JPanel
 	
 	public Tile()
 	{
+		this.setSize(RotyTools.getWorldSize());
+		this.setLocation(0, 0);
+		
 		raster  = new Dimension();
 		raster.width = RotyTools.getWorldSize().width / RotyTools.getFieldSize().width;
 		raster.height = RotyTools.getWorldSize().height / RotyTools.getFieldSize().height;
@@ -23,13 +26,13 @@ public class Tile extends JPanel
 		for(int i = 0; i < raster.height; i++)
 		{
 			for(int j = 0; j < raster.width; j++)
-			{
-				//this ? es sollte das teil returnen und main sollte adden, meine ich
-			
+			{			
 				fields[j][i] = new Field();
 				fields[j][i].setBackground(Color.GREEN);
 				fields[j][i].setSize(RotyTools.getFieldSize());
+				fields[j][i].setLocation(j*RotyTools.getFieldSize().width, i*RotyTools.getFieldSize().height);
 				this.add(fields[j][i]);
+				fields[j][i].setVisible(true);
 			}
 		}
 		

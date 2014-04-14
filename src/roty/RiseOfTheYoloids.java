@@ -55,7 +55,7 @@ public class RiseOfTheYoloids extends JFrame
 		world.setColor(Color.RED);
 		world.setSize(RotyTools.getWorldSize());
 		
-		//Tile tile = new Tile();
+		Tile tile = new Tile();
 		
 		// Creating Player
 		PlayerCharacter jim = new PlayerCharacter();
@@ -63,7 +63,7 @@ public class RiseOfTheYoloids extends JFrame
 		// Adding all to the Canvas
 		this.add(canvas);
 		canvas.add(world);
-		//canvas.add(tile);
+		world.add(tile);
 		canvas.add(jim);
 		//canvas.moveToFront(tile);
 		canvas.moveToFront(jim);
