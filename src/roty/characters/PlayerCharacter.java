@@ -66,6 +66,8 @@ public class PlayerCharacter extends JLabel implements ActionListener
 		this.getActionMap().put("left released",leftReleasedActionInstance);
 		this.getInputMap().put(KeyStroke.getKeyStroke("RIGHT"),"right pressed");
 		this.getActionMap().put("right pressed",rightActionInstance);
+		this.getInputMap().put(KeyStroke.getKeyStroke("released RIGHT"),"right released");
+		this.getActionMap().put("right released",rightReleasedActionInstance);
 		
 		
 	}
@@ -183,44 +185,48 @@ public class PlayerCharacter extends JLabel implements ActionListener
 		String dir;
 		if (UP_ARROW_KEY)
 		{
-			dir = "up";
-			changeYPosition(movement,dir);
-		}
-		else if (UP_ARROW_KEY && LEFT_ARROW_KEY)
-		{
-			dir = "left";
-			changeYPosition(movement,dir);
-			changeXPosition(-movement,dir);
+			if (RIGHT_ARROW_KEY)
+			{
+				dir = "right";
+				changeXPosition(movement,dir);
+				changeYPosition(-movement,dir);
 
-		}
-		else if (UP_ARROW_KEY && RIGHT_ARROW_KEY)
-		{
-			dir = "right";
-			changeYPosition(movement,dir);
-			changeXPosition(movement,dir);
-
+			}
+			else if (LEFT_ARROW_KEY)
+			{
+				dir = "left";
+				changeXPosition(-movement,dir);
+				changeYPosition(-movement,dir);
+			}
+			else
+			{
+				dir = "up";
+				changeYPosition(-movement,dir);
+			}
 		}
 		else if (DOWN_ARROW_KEY)
 		{
-			dir = "down";
-			changeYPosition(-movement,dir);
+			if (RIGHT_ARROW_KEY)
+			{
+				dir = "right";
+				changeXPosition(movement,dir);
+				changeYPosition(movement,dir);
+
+			}
+			else if (LEFT_ARROW_KEY)
+			{
+				dir = "left";
+				changeXPosition(-movement,dir);
+				changeYPosition(movement,dir);
+			}
+			else
+			{	
+				dir = "down";
+				changeYPosition(movement,dir);
+			}
 
 		}
-		else if (DOWN_ARROW_KEY && LEFT_ARROW_KEY)
-		{
-			dir = "left";
-			changeYPosition(-movement,dir);
-			changeXPosition(-movement,dir);
-
-		}
-		else if (DOWN_ARROW_KEY && RIGHT_ARROW_KEY)
-		{
-			dir = "right";
-			changeYPosition(-movement,dir);
-			changeXPosition(movement,dir);
-
-
-		}
+		
 		else if (RIGHT_ARROW_KEY)
 		{
 			dir = "right";
@@ -231,7 +237,6 @@ public class PlayerCharacter extends JLabel implements ActionListener
 		{
 			dir = "left";
 			changeXPosition(-movement,dir);
-
 		}
 		
 		

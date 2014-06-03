@@ -61,7 +61,7 @@ public class RiseOfTheYoloids extends JFrame
 		Tile tile = new Tile();
 		
 		// Creating Player
-		PlayerCharacter jim = new PlayerCharacter();
+		final PlayerCharacter jim = new PlayerCharacter();
 		
 		// Adding all to the Canvas
 		this.add(canvas);
@@ -81,7 +81,7 @@ public class RiseOfTheYoloids extends JFrame
 			{
 				jim.refresh();
 			}
-		}, 0, 100 * 5);
+		}, 0, 100 * 1);
 	}
 	
 	//public void startGame(){}		
