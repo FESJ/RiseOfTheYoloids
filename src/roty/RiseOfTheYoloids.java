@@ -3,7 +3,10 @@
 package roty;
 
 import javax.swing.*;
+
 import java.awt.*;
+import java.util.*;
+import java.util.Timer;
 
 import roty.characters.*;
 import roty.world.*;
@@ -71,6 +74,14 @@ public class RiseOfTheYoloids extends JFrame
 		// And show it!
 		this.setVisible(true);
 		this.pack();
+		Timer time = new Timer();
+		time.scheduleAtFixedRate(new TimerTask()
+		{
+			public void run()
+			{
+				jim.refresh();
+			}
+		}, 0, 100 * 5);
 	}
 	
 	//public void startGame(){}		
@@ -78,7 +89,8 @@ public class RiseOfTheYoloids extends JFrame
 	public static void main(String[] args) 
 	{		
 		// TODO Auto-generated method stub
-		new RiseOfTheYoloids();			
+		new RiseOfTheYoloids();	
+
 	}
 }
 
